@@ -138,7 +138,8 @@ export class Test {
       this.optionsElement.appendChild(optionElement)
     })
 
-    // Проверяем на то есть ли у нас ответ на вопрос (Если ответ на вопрос есть тогда делаем кнопку доступной) иначе (кнопка заблокирована)
+    // Проверяем на то есть ли у нас ответ на вопрос
+    // (Если ответ на вопрос есть тогда делаем кнопку доступной) иначе (кнопка заблокирована)
     if (chosenOption && chosenOption.chosenAnswerId) {
       this.nextButtonElement.removeAttribute("disabled")
     } else {
