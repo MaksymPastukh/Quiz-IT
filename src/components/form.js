@@ -8,14 +8,14 @@ export class Form {
         name: "name",
         id: "name",
         element: null,
-        regex: /^[А-Я][а-я]+\s*$/,
+        // regex: /^[А-Я][а-я]+\s*$/,
         valid: false
       },
       {
         name: "lastName",
         id: "last-name",
         element: null,
-        regex: /^[А-Я][а-я]+\s*$/,
+        // regex: /^[А-Я][а-я]+\s*$/,
         valid: false
       },
       {
@@ -94,7 +94,7 @@ export class Form {
       clients.push(Object.fromEntries(entries))
 
       sessionStorage.setItem(this.CLIENTS_KEY, JSON.stringify(clients))
-      location.href = "choice.html"
+      location.href = "#/choice"
     }
   }
 }

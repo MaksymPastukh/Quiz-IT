@@ -1,3 +1,5 @@
+import { StoreManager } from "../utils/store-manager.js"
+
 export class ResultValue {
   constructor() {
     this.quiz = null
@@ -9,7 +11,7 @@ export class ResultValue {
     this.resUserEmail = null
     this.rightAnswers = null
 
-    checkUserData()
+    new StoreManager().checkUserData()
     const dataUsers = sessionStorage.getItem("clients")
     const dataPars = JSON.parse(dataUsers)
     const name = dataPars[0].name
@@ -30,15 +32,15 @@ export class ResultValue {
         try {
           this.quiz = JSON.parse(xhr.responseText)
         } catch (e) {
-          location.href("index.html")
+          location.href("#/")
         }
         this.resultQuiz()
         this.resUserName.innerHTML = `${name} ${lastName}, ${email}`
       } else {
-        location.href("index.html")
+        location.href("#/")
       }
     } else {
-      location.href("index.html")
+      location.href("#/")
     }
   }
 
@@ -53,7 +55,7 @@ export class ResultValue {
     this.showResultQuiz()
 
     document.getElementById("result-value").onclick = function() {
-      location.href = "result.html"
+      location.href = "#/result"
     }
   }
 
@@ -131,10 +133,10 @@ export class ResultValue {
       try {
         this.rightAnswers = JSON.parse(xhr.responseText)
       } catch (e) {
-        location.href("index.html")
+        location.href("#/")
       }
     } else {
-      location.href("index.html")
+      location.href("#/")
     }
   }
 }

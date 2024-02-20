@@ -1,3 +1,5 @@
+import { StoreManager } from "../utils/store-manager.js"
+
 export class Test {
   constructor() {
     this.progressBarElement = null
@@ -12,7 +14,7 @@ export class Test {
     this.KEY_RESULT_QUIZ = "result-quiz"
     this.KEY_RESULT_RESPONSE = "result-response"
 
-    checkUserData()
+    new StoreManager().checkUserData()
     const id = sessionStorage.getItem("id-quiz")
     const idPars = JSON.parse(id)
     if (idPars) {
@@ -24,14 +26,14 @@ export class Test {
         try {
           this.quiz = JSON.parse(xhr.responseText)
         } catch (e) {
-          location.href("index.html")
+          location.href("#/")
         }
         this.startQuiz()
       } else {
-        location.href("index.html")
+        location.href("#/")
       }
     } else {
-      location.href("index.html")
+      location.href("#/")
     }
   }
 
@@ -58,7 +60,7 @@ export class Test {
 
     // Таймер теста
     const timerElement = document.getElementById("timer")
-    let seconds = 59
+    let seconds = 159
     const interval = setInterval(
       function() {
         seconds--
@@ -95,6 +97,8 @@ export class Test {
 
   showQuestion() {
     const activeQuestion = this.quiz.questions[this.currentQuestionIndex - 1]
+
+    console.log(activeQuestion.question)
     this.questionTitleElement.innerHTML = `
           <span>Вопрос ${this.currentQuestionIndex} - </span> 
           ${activeQuestion.question}
@@ -267,13 +271,13 @@ export class Test {
           JSON.stringify(resultArr)
         )
       } catch (e) {
-        location.href("index.html")
+        location.href("#/")
       }
       if (result) {
-        location.href = "result.html"
+        location.href = "#/result"
       }
     } else {
-      location.href("index.html")
+      location.href("#/")
     }
   }
 }

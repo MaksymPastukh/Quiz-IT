@@ -1,6 +1,8 @@
+import { StoreManager } from "../utils/store-manager.js"
+
 export class Result {
   constructor() {
-    checkUserData()
+    new StoreManager().checkUserData()
 
     const resultQuiz = sessionStorage.getItem("result-response")
     const resultQuizPars = JSON.parse(resultQuiz)
@@ -11,7 +13,7 @@ export class Result {
     })
 
     document.getElementById("result-value").onclick = function() {
-      location.href = "resultValue.html"
+      location.href = "#/resultValue"
     }
   }
 }

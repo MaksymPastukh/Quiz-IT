@@ -1,9 +1,11 @@
-export class Choice{
+import { StoreManager } from "../utils/store-manager.js"
+
+export class Choice {
   constructor() {
     this.quizzes = []
     this.KEY_ID_QUIZ = "id-quiz"
 
-    checkUserData()
+    new StoreManager().checkUserData()
 
     const xhr = new XMLHttpRequest()
     xhr.open("GET", "https://testologia.site/get-quizzes", false)
@@ -13,12 +15,12 @@ export class Choice{
       try {
         this.quizzes = JSON.parse(xhr.responseText)
       } catch (e) {
-        location.href("index.html")
+        location.href("#/")
       }
 
       this.processQuizzes()
     } else {
-      location.href("index.html")
+      location.href("#/")
     }
   }
 
@@ -44,7 +46,7 @@ export class Choice{
         const choiceOptionImageElement = document.createElement("img")
         choiceOptionImageElement.setAttribute(
           "src",
-          "assets/images/arrow.png"
+          "images/arrow.png"
         )
         choiceOptionImageElement.setAttribute("alt", "Arrow")
 
@@ -61,7 +63,7 @@ export class Choice{
     const dataId = element.getAttribute("data-id")
     sessionStorage.setItem(this.KEY_ID_QUIZ, dataId)
     if (dataId) {
-      location.href = "test.html"
+      location.href = "#/test"
     }
   }
 }
