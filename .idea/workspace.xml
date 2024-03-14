@@ -4,88 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac0617a7-275c-47c5-b4b9-9a7b1e74471f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/castom-http.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/MuseoSansCyrl-500.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/fonts/MuseoSansCyrl-500.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/MuseoSansCyrl-700.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/fonts/MuseoSansCyrl-700.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/Nunitobold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/fonts/Nunitobold.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/Nunitoregular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/fonts/Nunitoregular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/arrow-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/arrow-small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/background-result.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/background-result.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/choice-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/choice-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/form-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/form-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/homeWorks.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/homeWorks.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/main.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/main.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/result-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/result-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/small-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/small-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/images/time-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/images/time-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/choice.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/choice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/result.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/resultValue.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/resultValue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/choice.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/choice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/resultValue.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/resultValue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/MuseoSansCyrl-500.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/MuseoSansCyrl-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/Nunitobold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/fonts/Nunitoregular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/arrow-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/background-result.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/choice-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/form-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/homeWorks.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/result-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/small-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/time-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/choice.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/choice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/resultValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/resultValue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/choice.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/common.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/result.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/resultValue.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/choice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/result.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/resultValue.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/store-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/store-manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack.config.js" afterDir="false" />
-    </list>
+    <list default="true" id="ac0617a7-275c-47c5-b4b9-9a7b1e74471f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,26 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Айтилогия/Дипломные/Проект Quiz/frontend/src/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Айтилогия/Дипломные/Проект Quiz/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Айтилогия\Дипломные\Проект Quiz\frontend\src\templates" />
@@ -170,7 +89,7 @@
       <workItem from="1710177311517" duration="4296000" />
       <workItem from="1710261523029" duration="12584000" />
       <workItem from="1710350502257" duration="13940000" />
-      <workItem from="1710445533156" duration="891000" />
+      <workItem from="1710445533156" duration="1333000" />
     </task>
     <servers />
   </component>
