@@ -7,6 +7,7 @@ class App {
     window.addEventListener(`popstate`, this.handleRouterChanging.bind(this))
   }
 
+  // Запуск роутера
   handleRouterChanging() {
     this.router.openRoute()
   }

@@ -1,5 +1,4 @@
 import config from "../config/config.js"
-import { CustomHttp } from "./castom-http"
 
 export class Auth {
   // Статические переменные для хранения названия ключей
