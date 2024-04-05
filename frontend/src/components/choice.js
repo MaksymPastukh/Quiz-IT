@@ -6,8 +6,6 @@ export class Choice {
   constructor() {
     this.quizzes = []
     this.testResult = null
-    // this.KEY_ID_QUIZ = "id-quiz"
-    // new StoreManager().checkUserData()
     this.init()
 
   }

@@ -15,7 +15,7 @@ module.exports = {
   devServer: {
     static: '.dist',
     compress: true,
-    port: 9000,
+    port: 9001,
   },
   plugins: [new HtmlWebpackPlugin({
     template: "./src/index.html"

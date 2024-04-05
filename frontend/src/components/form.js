@@ -3,11 +3,14 @@ import { Auth } from "../services/auth.js"
 import config from "../config/config.js"
 
 export class Form {
+
+  // Указываем параметр page для того что управлять аутентификацией
   constructor(page) {
     this.agreeElement = null
     this.processElement = null
     this.email = null
     this.page = page
+
     const accessToken = localStorage.getItem(Auth.accessTokenKey)
     if (accessToken) {
       location.href = "#/choice"
@@ -28,6 +31,8 @@ export class Form {
       valid: false
     }]
 
+
+    // Если страница === регистрации тогда добавляем в начало массива fields два новых обьекта
     if (this.page === "signup") {
       this.fields.unshift({
         name: "name",
@@ -59,6 +64,8 @@ export class Form {
       that.processForm()
     }
 
+    console.log(this.page)
+    // Ecли открыта страница регистрации то проверяем чекбокс
     if (this.page === "signup") {
       // Находим чекбокс
       this.agreeElement = document.getElementById("agree")
@@ -84,7 +91,9 @@ export class Form {
   // Проверить на то что все поля валидны
   validateForm() {
     const validForm = this.fields.every(el => el.valid)
+    // console.log(validForm)
     const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm
+    console.log(isValid)
     if (isValid) {
       this.processElement.removeAttribute("disabled")
     } else {
@@ -99,6 +108,7 @@ export class Form {
     if (this.validateForm()) {
       const email = this.fields.find(item => item.name === "email").element.value
       const password = this.fields.find(item => item.name === "password").element.value
+      console.log(this.page)
       // Если страница регистрации отправляем запрос на бэк
       if (this.page === "signup") {
         try {

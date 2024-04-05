@@ -17,7 +17,9 @@ export class CustomHttp {
       params.headers["x-access-token"] = token
     }
 
+    // Если body пришло в функцию
     if (body) {
+      // То мы params.body добавляем то что пришло
       params.body = JSON.stringify(body)
     }
 
