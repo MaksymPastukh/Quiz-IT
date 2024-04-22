@@ -11,6 +11,6 @@ app.use(cors());
 app.use("/api", authRoutes);
 app.use("/api/tests", testRoutes);
 
-app.listen('3000', () =>
+app.listen('3001', () =>
     console.log(`Server started`)
 )

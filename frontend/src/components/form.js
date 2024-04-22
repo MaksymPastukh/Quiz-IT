@@ -144,6 +144,7 @@ export class Form {
 
         // Если прошло успешно
         if (result) {
+          console.log(result)
           // Проверяем на ошибки и на то что мы получили данные пользователя
           // Если данные есть и ошибки нет то перенаправляем человека на след страницу
           if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
