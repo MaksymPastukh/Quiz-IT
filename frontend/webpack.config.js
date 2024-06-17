@@ -3,10 +3,21 @@ const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
 
 
-
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/app.ts",
   mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -22,29 +33,11 @@ module.exports = {
   }),
     new CopyPlugin({
       patterns: [
-        { from: "./src/templates", to: "templates" },
-        { from: "./src/styles", to: "styles" },
-        { from: "./src/assets/fonts", to: "fonts" },
-        { from: "./src/assets/images", to: "images" }
+        {from: "./src/templates", to: "templates"},
+        {from: "./src/styles", to: "styles"},
+        {from: "./src/assets/fonts", to: "fonts"},
+        {from: "./src/assets/images", to: "images"}
       ]
     }),
-
-  ],
-  module: {
-    // rules: [
-    //   {
-    //     test: /\.js$/,
-    //     exclude: /node_modules/,
-    //     use: {
-    //       loader: 'babel-loader',
-    //       options: {
-    //         presets: [
-    //           ['@babel/preset-env', { targets: "defaults" }]
-    //         ]
-    //       }
-    //     }
-    //   }
-    // ]
-  },
-
+  ]
 }

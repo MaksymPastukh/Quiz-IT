@@ -1,8 +1,8 @@
-import { Auth } from "./auth.js"
+import {Auth} from "./auth"
 
 export class CustomHttp {
-  static async request(url, method = "GET", body = null) {
-    const params = {
+  public static async request(url: string, method: string = "GET", body: any = null): Promise<any> {
+    const params: any = {
       method: method,
       headers: {
         "Content-type": "application/json",
@@ -10,8 +10,7 @@ export class CustomHttp {
       }
     }
 
-
-    let token = localStorage.getItem(Auth.accessTokenKey)
+    let token: string | null = localStorage.getItem(Auth.accessTokenKey)
 
     if (token) {
       params.headers["x-access-token"] = token
@@ -23,13 +22,13 @@ export class CustomHttp {
       params.body = JSON.stringify(body)
     }
 
-    const response = await fetch(url, params)
+    const response: Response = await fetch(url, params)
 
     if (response.status < 200 || response.status >= 300) {
       // Делаем проверку на код 401
       // если получим эту ошибку то accessToken истек срок. Будем его обновлять
       if (response.status === 401) {
-        let result = await Auth.processUnauthorizedResponse()
+        let result : boolean = await Auth.processUnauthorizedResponse()
 
         if (result) {
           return await this.request(url, method, body)
@@ -38,7 +37,7 @@ export class CustomHttp {
         }
 
       }
-      throw new Error(response.message)
+      throw new Error(response.statusText)
     }
 
     return await response.json()

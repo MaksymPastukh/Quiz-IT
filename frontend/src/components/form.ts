@@ -1,17 +1,23 @@
-import { CustomHttp } from "../services/castom-http.js"
-import { Auth } from "../services/auth.js"
-import config from "../config/config.js"
+import {CustomHttp} from "../services/castom-http"
+import {Auth} from "../services/auth"
+import config from "../config/config"
+import {FormFieldType} from "../types/form-field.type";
+import {SignupResponseType} from "../types/signup-response.type";
+import {LoginResponseType} from "../types/login-response.type";
 
 export class Form {
+  readonly agreeElement: HTMLInputElement | null = null
+  readonly processElement: HTMLElement | null = null
+  private email: string | null | undefined
+  readonly page: 'signup' | 'login'
+  private fields: FormFieldType[] = [];
 
   // Указываем параметр page для того что управлять аутентификацией
-  constructor(page) {
-    this.agreeElement = null
-    this.processElement = null
-    this.email = null
+  constructor(page: 'signup' | 'login') {
     this.page = page
+    this.email = null
 
-    const accessToken = localStorage.getItem(Auth.accessTokenKey)
+    const accessToken: string | null = localStorage.getItem(Auth.accessTokenKey)
     if (accessToken) {
       location.href = "#/choice"
       return
@@ -38,84 +44,90 @@ export class Form {
         name: "name",
         id: "name",
         element: null,
-        // regex: /^[А-Я][а-я]+\s*$/,
+        regex: /^[А-Я][а-я]+\s*$/,
         valid: false
       }, {
         name: "lastName",
         id: "last-name",
         element: null,
-        // regex: /^[А-Я][а-я]+\s*$/,
+        regex: /^[А-Я][а-я]+\s*$/,
         valid: false
       })
     }
 
-    const that = this
+    const that: Form = this
 
-    this.fields.forEach(item => {
-      item.element = document.getElementById(item.id)
-      item.element.onchange = function() {
-        that.validateField.call(that, item, this)
+    this.fields.forEach((item: FormFieldType): void => {
+      item.element = document.getElementById(item.id) as HTMLInputElement
+      if (item.element) {
+        item.element.onchange = function (): void {
+          that.validateField.call(that, item, <HTMLInputElement>this)
+        }
       }
     })
 
     // Находим кнопку отправки формы
     this.processElement = document.getElementById("process")
-    this.processElement.onclick = function() {
-      that.processForm()
+    if (this.processElement) {
+      this.processElement.onclick = function () {
+        that.processForm()
+      }
     }
 
-    console.log(this.page)
+
     // Ecли открыта страница регистрации то проверяем чекбокс
     if (this.page === "signup") {
       // Находим чекбокс
-      this.agreeElement = document.getElementById("agree")
-      // Вешаем обработчик по изменению значения
-      this.agreeElement.onchange = function() {
-        that.validateForm()
+      this.agreeElement = document.getElementById("agree") as HTMLInputElement
+      if (this.agreeElement) {
+        // Вешаем обработчик по изменению значения
+        this.agreeElement.onchange = function () {
+          that.validateForm()
+        }
       }
     }
   }
 
-  validateField(field, element) {
-    if (!element.value || !element.value.match(field.regex)) {
-      element.parentNode.style.borderColor = "red"
-      field.valid = false
-    } else {
-      element.parentNode.removeAttribute("style")
-      field.valid = true
+  private validateField(field: FormFieldType, element: HTMLInputElement): void {
+    if (element.parentNode) {
+      if (!element.value || !element.value.match(field.regex)) {
+        (element.parentNode as HTMLElement).style.borderColor = "red"
+        field.valid = false
+      } else {
+        (element.parentNode as HTMLElement).removeAttribute("style")
+        field.valid = true
+      }
     }
     // Вызываем функцию для проверки валидности полей
     this.validateForm()
   }
 
   // Проверить на то что все поля валидны
-  validateForm() {
-    const validForm = this.fields.every(el => el.valid)
-    // console.log(validForm)
-    const isValid = this.agreeElement ? this.agreeElement.checked && validForm : validForm
-    console.log(isValid)
-    if (isValid) {
-      this.processElement.removeAttribute("disabled")
-    } else {
-      this.processElement.setAttribute("disabled", "disabled")
+  private validateForm(): boolean {
+    const validForm: boolean = this.fields.every((el: FormFieldType) => el.valid)
+    const isValid: boolean = this.agreeElement ? this.agreeElement.checked && validForm : validForm
+    if (this.processElement) {
+      if (isValid) {
+        this.processElement.removeAttribute("disabled")
+      } else {
+        this.processElement.setAttribute("disabled", "disabled")
+      }
     }
-
     return isValid
   }
 
-  async processForm() {
+  private async processForm(): Promise<void> {
     // Проверяем какая у нас страница
     if (this.validateForm()) {
-      const email = this.fields.find(item => item.name === "email").element.value
-      const password = this.fields.find(item => item.name === "password").element.value
-      console.log(this.page)
+      const email = this.fields.find(item => item.name === "email")?.element?.value
+      const password = this.fields.find(item  => item.name === "password")?.element?.value
       // Если страница регистрации отправляем запрос на бэк
       if (this.page === "signup") {
         try {
           // Отправляем данные на бекэнд
-          const result = await CustomHttp.request(config.host + "/signup", "POST", {
-            name: this.fields.find(item => item.name === "name").element.value,
-            lastName: this.fields.find(item => item.name === "lastName").element.value,
+          const result: SignupResponseType = await CustomHttp.request(config.host + "/signup", "POST", {
+            name: this.fields.find(item => item.name === "name")?.element?.value,
+            lastName: this.fields.find(item => item.name === "lastName")?.element?.value,
             email: email,
             password: password
           })
@@ -137,7 +149,7 @@ export class Form {
 
       try {
         // Отправляем данные на бекэнд
-        const result = await CustomHttp.request(config.host + "/login", "POST", {
+        const result : LoginResponseType = await CustomHttp.request(config.host + "/login", "POST", {
           email: email,
           password: password
         })
@@ -150,7 +162,6 @@ export class Form {
           if (result.error || !result.accessToken || !result.refreshToken || !result.fullName || !result.userId) {
             throw new Error(result.message)
           }
-          // console.log(result)
           // Сохраняем токены в локальное хранилище,
           // Сохраняем инфо пользователя в локальное хранилище
           Auth.setTokens(result.accessToken, result.refreshToken)
